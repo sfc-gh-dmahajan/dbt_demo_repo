@@ -1,0 +1,305 @@
+
+
+============================== 13:06:28.050095 | 976fd58f-0b45-4e5a-84e7-356fb57026a9 ==============================
+[0m13:06:28.050095 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m13:06:28.051362 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/tmp/dbt/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt ', 'introspect': 'True', 'target_path': '/tmp/dbt/target/', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m13:06:28.125513 [error] [Dummy-1   ]:  adapter: Invalid profile: 'user' is a required property.
+[0m13:06:28.422349 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m13:06:28.476344 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m13:06:28.477829 [info ] [Dummy-1   ]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m13:06:30.944900 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m13:06:30.947653 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m13:06:30.988439 [info ] [Dummy-1   ]: Found 4 models, 8 data tests, 2 sources, 474 macros
+[0m13:06:30.991588 [info ] [Dummy-1   ]: 
+[0m13:06:30.992287 [info ] [Dummy-1   ]: Concurrency: 8 threads (target='dev')
+[0m13:06:30.992898 [info ] [Dummy-1   ]: 
+[0m13:06:30.993831 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m13:06:31.001332 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_DATABASE_DBT_SCHEMA_DBT_SCHEMA'
+[0m13:06:31.117553 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DATABASE_DBT_SCHEMA_DBT_SCHEMA"
+[0m13:06:31.118328 [debug] [ThreadPool]: On list_DBT_DATABASE_DBT_SCHEMA_DBT_SCHEMA: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_snowflake_demo", "target_name": "dev", "connection_name": "list_DBT_DATABASE_DBT_SCHEMA_DBT_SCHEMA"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m13:06:31.119057 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:06:31.615951 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.497 seconds
+[0m13:06:31.622456 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DATABASE_DBT_SCHEMA_DBT_SCHEMA"
+[0m13:06:31.623361 [debug] [ThreadPool]: On list_DBT_DATABASE_DBT_SCHEMA_DBT_SCHEMA: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_snowflake_demo", "target_name": "dev", "connection_name": "list_DBT_DATABASE_DBT_SCHEMA_DBT_SCHEMA"} */
+show objects in DBT_DATABASE.DBT_SCHEMA_DBT_SCHEMA
+    limit 10000
+    
+;
+[0m13:06:31.663384 [debug] [ThreadPool]: Snowflake adapter: Snowflake query id: 01c4e848-0001-fbe5-0009-ded203f452fa
+[0m13:06:31.664176 [debug] [ThreadPool]: Snowflake adapter: Snowflake error: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+[0m13:06:31.665058 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_relations_without_caching
+[0m13:06:31.665723 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m13:06:31.675867 [debug] [Thread-2 (]: Began running node model.dbt_snowflake_demo.stg_customers
+[0m13:06:31.677033 [debug] [Thread-3 (]: Began running node model.dbt_snowflake_demo.stg_orders
+[0m13:06:31.678057 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DBT_DATABASE_DBT_SCHEMA_DBT_SCHEMA, now model.dbt_snowflake_demo.stg_customers)
+[0m13:06:31.679159 [debug] [Thread-3 (]: Acquiring new snowflake connection 'model.dbt_snowflake_demo.stg_orders'
+[0m13:06:31.679968 [debug] [Thread-2 (]: Began compiling node model.dbt_snowflake_demo.stg_customers
+[0m13:06:31.680702 [debug] [Thread-3 (]: Began compiling node model.dbt_snowflake_demo.stg_orders
+[0m13:06:31.700004 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_snowflake_demo.stg_customers"
+[0m13:06:31.711480 [debug] [Thread-3 (]: Writing injected SQL for node "model.dbt_snowflake_demo.stg_orders"
+[0m13:06:31.713350 [debug] [Thread-2 (]: Began executing node model.dbt_snowflake_demo.stg_customers
+[0m13:06:31.714139 [debug] [Thread-3 (]: Began executing node model.dbt_snowflake_demo.stg_orders
+[0m13:06:31.715369 [debug] [Thread-2 (]: Finished running node model.dbt_snowflake_demo.stg_customers
+[0m13:06:31.716559 [debug] [Thread-3 (]: Finished running node model.dbt_snowflake_demo.stg_orders
+[0m13:06:31.718832 [debug] [Thread-5 (]: Began running node test.dbt_snowflake_demo.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m13:06:31.719861 [debug] [Thread-6 (]: Began running node test.dbt_snowflake_demo.unique_stg_customers_customer_id.c7614daada
+[0m13:06:31.721745 [debug] [Thread-8 (]: Began running node model.dbt_snowflake_demo.customer_order_summary
+[0m13:06:31.722719 [debug] [Thread-9 (]: Began running node test.dbt_snowflake_demo.not_null_stg_orders_order_id.81cfe2fe64
+[0m13:06:31.723671 [debug] [Thread-5 (]: Acquiring new snowflake connection 'test.dbt_snowflake_demo.not_null_stg_customers_customer_id.e2cfb1f9aa'
+[0m13:06:31.724572 [debug] [Thread-4 (]: Began running node test.dbt_snowflake_demo.unique_stg_orders_order_id.e3b841c71a
+[0m13:06:31.725608 [debug] [Thread-6 (]: Acquiring new snowflake connection 'test.dbt_snowflake_demo.unique_stg_customers_customer_id.c7614daada'
+[0m13:06:31.726511 [debug] [Thread-8 (]: Acquiring new snowflake connection 'model.dbt_snowflake_demo.customer_order_summary'
+[0m13:06:31.727395 [debug] [Thread-9 (]: Acquiring new snowflake connection 'test.dbt_snowflake_demo.not_null_stg_orders_order_id.81cfe2fe64'
+[0m13:06:31.728211 [debug] [Thread-5 (]: Began compiling node test.dbt_snowflake_demo.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m13:06:31.729194 [debug] [Thread-4 (]: Acquiring new snowflake connection 'test.dbt_snowflake_demo.unique_stg_orders_order_id.e3b841c71a'
+[0m13:06:31.729927 [debug] [Thread-6 (]: Began compiling node test.dbt_snowflake_demo.unique_stg_customers_customer_id.c7614daada
+[0m13:06:31.730638 [debug] [Thread-8 (]: Began compiling node model.dbt_snowflake_demo.customer_order_summary
+[0m13:06:31.731327 [debug] [Thread-9 (]: Began compiling node test.dbt_snowflake_demo.not_null_stg_orders_order_id.81cfe2fe64
+[0m13:06:31.757227 [debug] [Thread-5 (]: Writing injected SQL for node "test.dbt_snowflake_demo.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m13:06:31.758067 [debug] [Thread-4 (]: Began compiling node test.dbt_snowflake_demo.unique_stg_orders_order_id.e3b841c71a
+[0m13:06:31.775009 [debug] [Thread-6 (]: Writing injected SQL for node "test.dbt_snowflake_demo.unique_stg_customers_customer_id.c7614daada"
+[0m13:06:31.787234 [debug] [Thread-8 (]: Writing injected SQL for node "model.dbt_snowflake_demo.customer_order_summary"
+[0m13:06:31.802795 [debug] [Thread-9 (]: Writing injected SQL for node "test.dbt_snowflake_demo.not_null_stg_orders_order_id.81cfe2fe64"
+[0m13:06:31.816773 [debug] [Thread-4 (]: Writing injected SQL for node "test.dbt_snowflake_demo.unique_stg_orders_order_id.e3b841c71a"
+[0m13:06:31.817690 [debug] [Thread-5 (]: Began executing node test.dbt_snowflake_demo.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m13:06:31.818924 [debug] [Thread-6 (]: Began executing node test.dbt_snowflake_demo.unique_stg_customers_customer_id.c7614daada
+[0m13:06:31.820375 [debug] [Thread-8 (]: Began executing node model.dbt_snowflake_demo.customer_order_summary
+[0m13:06:31.821281 [debug] [Thread-9 (]: Began executing node test.dbt_snowflake_demo.not_null_stg_orders_order_id.81cfe2fe64
+[0m13:06:31.822607 [debug] [Thread-5 (]: Finished running node test.dbt_snowflake_demo.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m13:06:31.823272 [debug] [Thread-4 (]: Began executing node test.dbt_snowflake_demo.unique_stg_orders_order_id.e3b841c71a
+[0m13:06:31.824460 [debug] [Thread-6 (]: Finished running node test.dbt_snowflake_demo.unique_stg_customers_customer_id.c7614daada
+[0m13:06:31.825708 [debug] [Thread-8 (]: Finished running node model.dbt_snowflake_demo.customer_order_summary
+[0m13:06:31.826862 [debug] [Thread-9 (]: Finished running node test.dbt_snowflake_demo.not_null_stg_orders_order_id.81cfe2fe64
+[0m13:06:31.828914 [debug] [Thread-4 (]: Finished running node test.dbt_snowflake_demo.unique_stg_orders_order_id.e3b841c71a
+[0m13:06:31.831532 [debug] [Thread-7 (]: Began running node model.dbt_snowflake_demo.customer_order_summary_view
+[0m13:06:31.832458 [debug] [Thread-3 (]: Began running node test.dbt_snowflake_demo.not_null_customer_order_summary_customer_id.84627336c6
+[0m13:06:31.833743 [debug] [Thread-9 (]: Began running node test.dbt_snowflake_demo.unique_customer_order_summary_customer_id.6c9aa45ad4
+[0m13:06:31.835363 [debug] [Thread-7 (]: Acquiring new snowflake connection 'model.dbt_snowflake_demo.customer_order_summary_view'
+[0m13:06:31.836243 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.dbt_snowflake_demo.stg_orders, now test.dbt_snowflake_demo.not_null_customer_order_summary_customer_id.84627336c6)
+[0m13:06:31.837055 [debug] [Thread-9 (]: Re-using an available connection from the pool (formerly test.dbt_snowflake_demo.not_null_stg_orders_order_id.81cfe2fe64, now test.dbt_snowflake_demo.unique_customer_order_summary_customer_id.6c9aa45ad4)
+[0m13:06:31.837806 [debug] [Thread-7 (]: Began compiling node model.dbt_snowflake_demo.customer_order_summary_view
+[0m13:06:31.838580 [debug] [Thread-3 (]: Began compiling node test.dbt_snowflake_demo.not_null_customer_order_summary_customer_id.84627336c6
+[0m13:06:31.839337 [debug] [Thread-9 (]: Began compiling node test.dbt_snowflake_demo.unique_customer_order_summary_customer_id.6c9aa45ad4
+[0m13:06:31.857914 [debug] [Thread-7 (]: Writing injected SQL for node "model.dbt_snowflake_demo.customer_order_summary_view"
+[0m13:06:31.871439 [debug] [Thread-3 (]: Writing injected SQL for node "test.dbt_snowflake_demo.not_null_customer_order_summary_customer_id.84627336c6"
+[0m13:06:31.886091 [debug] [Thread-9 (]: Writing injected SQL for node "test.dbt_snowflake_demo.unique_customer_order_summary_customer_id.6c9aa45ad4"
+[0m13:06:31.887533 [debug] [Thread-7 (]: Began executing node model.dbt_snowflake_demo.customer_order_summary_view
+[0m13:06:31.888627 [debug] [Thread-3 (]: Began executing node test.dbt_snowflake_demo.not_null_customer_order_summary_customer_id.84627336c6
+[0m13:06:31.889973 [debug] [Thread-7 (]: Finished running node model.dbt_snowflake_demo.customer_order_summary_view
+[0m13:06:31.890770 [debug] [Thread-9 (]: Began executing node test.dbt_snowflake_demo.unique_customer_order_summary_customer_id.6c9aa45ad4
+[0m13:06:31.894714 [debug] [Thread-6 (]: Began running node test.dbt_snowflake_demo.unique_customer_order_summary_view_customer_id.fd8dd3f765
+[0m13:06:31.893850 [debug] [Thread-5 (]: Began running node test.dbt_snowflake_demo.not_null_customer_order_summary_view_customer_id.d5ed73a5df
+[0m13:06:31.891936 [debug] [Thread-3 (]: Finished running node test.dbt_snowflake_demo.not_null_customer_order_summary_customer_id.84627336c6
+[0m13:06:31.895889 [debug] [Thread-9 (]: Finished running node test.dbt_snowflake_demo.unique_customer_order_summary_customer_id.6c9aa45ad4
+[0m13:06:31.896836 [debug] [Thread-6 (]: Re-using an available connection from the pool (formerly test.dbt_snowflake_demo.unique_stg_customers_customer_id.c7614daada, now test.dbt_snowflake_demo.unique_customer_order_summary_view_customer_id.fd8dd3f765)
+[0m13:06:31.897723 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly test.dbt_snowflake_demo.not_null_stg_customers_customer_id.e2cfb1f9aa, now test.dbt_snowflake_demo.not_null_customer_order_summary_view_customer_id.d5ed73a5df)
+[0m13:06:31.899734 [debug] [Thread-6 (]: Began compiling node test.dbt_snowflake_demo.unique_customer_order_summary_view_customer_id.fd8dd3f765
+[0m13:06:31.900566 [debug] [Thread-5 (]: Began compiling node test.dbt_snowflake_demo.not_null_customer_order_summary_view_customer_id.d5ed73a5df
+[0m13:06:31.914444 [debug] [Thread-6 (]: Writing injected SQL for node "test.dbt_snowflake_demo.unique_customer_order_summary_view_customer_id.fd8dd3f765"
+[0m13:06:31.928462 [debug] [Thread-5 (]: Writing injected SQL for node "test.dbt_snowflake_demo.not_null_customer_order_summary_view_customer_id.d5ed73a5df"
+[0m13:06:31.929848 [debug] [Thread-6 (]: Began executing node test.dbt_snowflake_demo.unique_customer_order_summary_view_customer_id.fd8dd3f765
+[0m13:06:31.931274 [debug] [Thread-6 (]: Finished running node test.dbt_snowflake_demo.unique_customer_order_summary_view_customer_id.fd8dd3f765
+[0m13:06:31.932026 [debug] [Thread-5 (]: Began executing node test.dbt_snowflake_demo.not_null_customer_order_summary_view_customer_id.d5ed73a5df
+[0m13:06:31.933778 [debug] [Thread-5 (]: Finished running node test.dbt_snowflake_demo.not_null_customer_order_summary_view_customer_id.d5ed73a5df
+[0m13:06:31.938338 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m13:06:31.939193 [debug] [Dummy-1   ]: Connection 'model.dbt_snowflake_demo.stg_customers' was properly closed.
+[0m13:06:31.939835 [debug] [Dummy-1   ]: Connection 'test.dbt_snowflake_demo.not_null_customer_order_summary_customer_id.84627336c6' was properly closed.
+[0m13:06:31.940437 [debug] [Dummy-1   ]: Connection 'test.dbt_snowflake_demo.not_null_customer_order_summary_view_customer_id.d5ed73a5df' was properly closed.
+[0m13:06:31.941053 [debug] [Dummy-1   ]: Connection 'test.dbt_snowflake_demo.unique_customer_order_summary_view_customer_id.fd8dd3f765' was properly closed.
+[0m13:06:31.941680 [debug] [Dummy-1   ]: Connection 'model.dbt_snowflake_demo.customer_order_summary' was properly closed.
+[0m13:06:31.942280 [debug] [Dummy-1   ]: Connection 'test.dbt_snowflake_demo.unique_customer_order_summary_customer_id.6c9aa45ad4' was properly closed.
+[0m13:06:31.942846 [debug] [Dummy-1   ]: Connection 'test.dbt_snowflake_demo.unique_stg_orders_order_id.e3b841c71a' was properly closed.
+[0m13:06:31.943399 [debug] [Dummy-1   ]: Connection 'model.dbt_snowflake_demo.customer_order_summary_view' was properly closed.
+[0m13:06:31.946269 [debug] [Dummy-1   ]: Command end result
+[0m13:06:31.979938 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m13:06:31.982632 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m13:06:31.992472 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m13:06:31.994682 [debug] [Dummy-1   ]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 4.047406, "process_in_blocks": "0", "process_kernel_time": 1.32, "process_mem_max_rss": "529192", "process_out_blocks": "0", "process_user_time": 6.91}
+[0m13:06:31.995552 [debug] [Dummy-1   ]: Command `cli compile` succeeded at 13:06:31.995151 after 4.05 seconds
+[0m13:06:31.996241 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 13:07:12.979289 | ea7ede26-8e79-4d5b-a186-d58d403dff8f ==============================
+[0m13:07:12.979289 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m13:07:12.980477 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'debug': 'False', 'warn_error': 'None', 'log_path': '/tmp/dbt/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt ', 'introspect': 'True', 'static_parser': 'True', 'target_path': '/tmp/dbt/target/', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'False'}
+[0m13:07:13.050677 [error] [Dummy-1   ]:  adapter: Invalid profile: 'user' is a required property.
+[0m13:07:13.342096 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m13:07:13.394068 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m13:07:13.758476 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m13:07:13.759255 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m13:07:13.954247 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m13:07:13.957154 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m13:07:14.009373 [info ] [Dummy-1   ]: Found 4 models, 8 data tests, 2 sources, 474 macros
+[0m13:07:14.012274 [info ] [Dummy-1   ]: 
+[0m13:07:14.012999 [info ] [Dummy-1   ]: Concurrency: 8 threads (target='dev')
+[0m13:07:14.013594 [info ] [Dummy-1   ]: 
+[0m13:07:14.014540 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m13:07:14.022245 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_DATABASE'
+[0m13:07:14.136410 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DATABASE"
+[0m13:07:14.137204 [debug] [ThreadPool]: On list_DBT_DATABASE: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_snowflake_demo", "target_name": "dev", "connection_name": "list_DBT_DATABASE"} */
+show terse schemas in database DBT_DATABASE
+    limit 10000
+[0m13:07:14.137838 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:07:15.668153 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.530 seconds
+[0m13:07:15.671287 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DBT_DATABASE, now create_DBT_DATABASE_DBT_SCHEMA_DBT_SCHEMA)
+[0m13:07:15.672211 [debug] [ThreadPool]: Creating schema "database: "DBT_DATABASE"
+schema: "DBT_SCHEMA_DBT_SCHEMA"
+"
+[0m13:07:15.686995 [debug] [ThreadPool]: Using snowflake connection "create_DBT_DATABASE_DBT_SCHEMA_DBT_SCHEMA"
+[0m13:07:15.687763 [debug] [ThreadPool]: On create_DBT_DATABASE_DBT_SCHEMA_DBT_SCHEMA: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_snowflake_demo", "target_name": "dev", "connection_name": "create_DBT_DATABASE_DBT_SCHEMA_DBT_SCHEMA"} */
+create schema if not exists DBT_DATABASE.DBT_SCHEMA_DBT_SCHEMA
+[0m13:07:15.688380 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:07:17.170776 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 1.482 seconds
+[0m13:07:17.174591 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_DATABASE_DBT_SCHEMA_DBT_SCHEMA'
+[0m13:07:17.197263 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DATABASE_DBT_SCHEMA_DBT_SCHEMA"
+[0m13:07:17.198001 [debug] [ThreadPool]: On list_DBT_DATABASE_DBT_SCHEMA_DBT_SCHEMA: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_snowflake_demo", "target_name": "dev", "connection_name": "list_DBT_DATABASE_DBT_SCHEMA_DBT_SCHEMA"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m13:07:17.198683 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:07:18.490257 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 1.291 seconds
+[0m13:07:18.496308 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DATABASE_DBT_SCHEMA_DBT_SCHEMA"
+[0m13:07:18.497055 [debug] [ThreadPool]: On list_DBT_DATABASE_DBT_SCHEMA_DBT_SCHEMA: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_snowflake_demo", "target_name": "dev", "connection_name": "list_DBT_DATABASE_DBT_SCHEMA_DBT_SCHEMA"} */
+show objects in DBT_DATABASE.DBT_SCHEMA_DBT_SCHEMA
+    limit 10000
+    
+;
+[0m13:07:18.726143 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.228 seconds
+[0m13:07:18.728859 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DATABASE_DBT_SCHEMA_DBT_SCHEMA"
+[0m13:07:18.729572 [debug] [ThreadPool]: On list_DBT_DATABASE_DBT_SCHEMA_DBT_SCHEMA: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_snowflake_demo", "target_name": "dev", "connection_name": "list_DBT_DATABASE_DBT_SCHEMA_DBT_SCHEMA"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m13:07:18.935322 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.205 seconds
+[0m13:07:18.950680 [debug] [Thread-2 (]: Began running node model.dbt_snowflake_demo.stg_customers
+[0m13:07:18.951694 [debug] [Thread-3 (]: Began running node model.dbt_snowflake_demo.stg_orders
+[0m13:07:18.952775 [info ] [Thread-2 (]: 1 of 4 START sql view model DBT_SCHEMA_DBT_SCHEMA.stg_customers ................ [RUN]
+[0m13:07:18.953789 [info ] [Thread-3 (]: 2 of 4 START sql view model DBT_SCHEMA_DBT_SCHEMA.stg_orders ................... [RUN]
+[0m13:07:18.954698 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DBT_DATABASE_DBT_SCHEMA_DBT_SCHEMA, now model.dbt_snowflake_demo.stg_customers)
+[0m13:07:18.955530 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly create_DBT_DATABASE_DBT_SCHEMA_DBT_SCHEMA, now model.dbt_snowflake_demo.stg_orders)
+[0m13:07:18.956282 [debug] [Thread-2 (]: Began compiling node model.dbt_snowflake_demo.stg_customers
+[0m13:07:18.957059 [debug] [Thread-3 (]: Began compiling node model.dbt_snowflake_demo.stg_orders
+[0m13:07:18.976167 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_snowflake_demo.stg_customers"
+[0m13:07:18.987860 [debug] [Thread-3 (]: Writing injected SQL for node "model.dbt_snowflake_demo.stg_orders"
+[0m13:07:18.989411 [debug] [Thread-2 (]: Began executing node model.dbt_snowflake_demo.stg_customers
+[0m13:07:18.995977 [debug] [Thread-3 (]: Began executing node model.dbt_snowflake_demo.stg_orders
+[0m13:07:19.085792 [debug] [Thread-2 (]: Writing runtime sql for node "model.dbt_snowflake_demo.stg_customers"
+[0m13:07:19.086922 [debug] [Thread-3 (]: Writing runtime sql for node "model.dbt_snowflake_demo.stg_orders"
+[0m13:07:19.089076 [debug] [Thread-3 (]: Using snowflake connection "model.dbt_snowflake_demo.stg_orders"
+[0m13:07:19.090271 [debug] [Thread-2 (]: Using snowflake connection "model.dbt_snowflake_demo.stg_customers"
+[0m13:07:19.091070 [debug] [Thread-3 (]: On model.dbt_snowflake_demo.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_snowflake_demo", "target_name": "dev", "node_id": "model.dbt_snowflake_demo.stg_orders"} */
+create or replace   view DBT_DATABASE.DBT_SCHEMA_DBT_SCHEMA.stg_orders
+  
+   as (
+    select
+    order_id,
+    customer_id,
+    order_date,
+    order_amount,
+    order_status
+from DBT_DATABASE.DBT_SCHEMA.ORDERS
+  );
+[0m13:07:19.091857 [debug] [Thread-2 (]: On model.dbt_snowflake_demo.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_snowflake_demo", "target_name": "dev", "node_id": "model.dbt_snowflake_demo.stg_customers"} */
+create or replace   view DBT_DATABASE.DBT_SCHEMA_DBT_SCHEMA.stg_customers
+  
+   as (
+    select
+    customer_id,
+    customer_name,
+    customer_segment,
+    signup_date
+from DBT_DATABASE.DBT_SCHEMA.CUSTOMERS
+  );
+[0m13:07:19.092647 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m13:07:19.093412 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m13:07:21.050729 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 1.958 seconds
+[0m13:07:21.082944 [info ] [Thread-3 (]: 2 of 4 OK created sql view model DBT_SCHEMA_DBT_SCHEMA.stg_orders .............. [[32mSUCCESS 1[0m in 2.13s]
+[0m13:07:21.084078 [debug] [Thread-3 (]: Finished running node model.dbt_snowflake_demo.stg_orders
+[0m13:07:21.098171 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 2.005 seconds
+[0m13:07:21.102224 [info ] [Thread-2 (]: 1 of 4 OK created sql view model DBT_SCHEMA_DBT_SCHEMA.stg_customers ........... [[32mSUCCESS 1[0m in 2.15s]
+[0m13:07:21.103336 [debug] [Thread-2 (]: Finished running node model.dbt_snowflake_demo.stg_customers
+[0m13:07:21.105361 [debug] [Thread-5 (]: Began running node model.dbt_snowflake_demo.customer_order_summary
+[0m13:07:21.106782 [info ] [Thread-5 (]: 3 of 4 START sql table model DBT_SCHEMA_DBT_SCHEMA.customer_order_summary ...... [RUN]
+[0m13:07:21.107846 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.dbt_snowflake_demo.customer_order_summary'
+[0m13:07:21.108637 [debug] [Thread-5 (]: Began compiling node model.dbt_snowflake_demo.customer_order_summary
+[0m13:07:21.122581 [debug] [Thread-5 (]: Writing injected SQL for node "model.dbt_snowflake_demo.customer_order_summary"
+[0m13:07:21.123665 [debug] [Thread-5 (]: Began executing node model.dbt_snowflake_demo.customer_order_summary
+[0m13:07:21.163971 [debug] [Thread-5 (]: Writing runtime sql for node "model.dbt_snowflake_demo.customer_order_summary"
+[0m13:07:21.166444 [debug] [Thread-5 (]: Using snowflake connection "model.dbt_snowflake_demo.customer_order_summary"
+[0m13:07:21.167310 [debug] [Thread-5 (]: On model.dbt_snowflake_demo.customer_order_summary: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_snowflake_demo", "target_name": "dev", "node_id": "model.dbt_snowflake_demo.customer_order_summary"} */
+create or replace transient table DBT_DATABASE.DBT_SCHEMA_DBT_SCHEMA.customer_order_summary
+         as
+        (
+
+select
+    customers.customer_id,
+    customers.customer_name,
+    customers.customer_segment,
+    customers.signup_date,
+    count(orders.order_id) as total_orders,
+    coalesce(sum(orders.order_amount), 0) as total_order_amount,
+    coalesce(avg(orders.order_amount), 0) as average_order_amount,
+    max(orders.order_date) as most_recent_order_date
+from DBT_DATABASE.DBT_SCHEMA_DBT_SCHEMA.stg_customers as customers
+left join DBT_DATABASE.DBT_SCHEMA_DBT_SCHEMA.stg_orders as orders
+    on customers.customer_id = orders.customer_id
+group by
+    customers.customer_id,
+    customers.customer_name,
+    customers.customer_segment,
+    customers.signup_date
+        );
+[0m13:07:21.168067 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m13:07:25.307661 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 4.139 seconds
+[0m13:07:25.311625 [info ] [Thread-5 (]: 3 of 4 OK created sql table model DBT_SCHEMA_DBT_SCHEMA.customer_order_summary . [[32mSUCCESS 1[0m in 4.20s]
+[0m13:07:25.312708 [debug] [Thread-5 (]: Finished running node model.dbt_snowflake_demo.customer_order_summary
+[0m13:07:25.314808 [debug] [Thread-7 (]: Began running node model.dbt_snowflake_demo.customer_order_summary_view
+[0m13:07:25.316233 [info ] [Thread-7 (]: 4 of 4 START sql view model DBT_SCHEMA_DBT_SCHEMA.customer_order_summary_view .. [RUN]
+[0m13:07:25.317282 [debug] [Thread-7 (]: Acquiring new snowflake connection 'model.dbt_snowflake_demo.customer_order_summary_view'
+[0m13:07:25.318016 [debug] [Thread-7 (]: Began compiling node model.dbt_snowflake_demo.customer_order_summary_view
+[0m13:07:25.331679 [debug] [Thread-7 (]: Writing injected SQL for node "model.dbt_snowflake_demo.customer_order_summary_view"
+[0m13:07:25.332708 [debug] [Thread-7 (]: Began executing node model.dbt_snowflake_demo.customer_order_summary_view
+[0m13:07:25.344080 [debug] [Thread-7 (]: Writing runtime sql for node "model.dbt_snowflake_demo.customer_order_summary_view"
+[0m13:07:25.346039 [debug] [Thread-7 (]: Using snowflake connection "model.dbt_snowflake_demo.customer_order_summary_view"
+[0m13:07:25.346894 [debug] [Thread-7 (]: On model.dbt_snowflake_demo.customer_order_summary_view: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dbt_snowflake_demo", "target_name": "dev", "node_id": "model.dbt_snowflake_demo.customer_order_summary_view"} */
+create or replace   view DBT_DATABASE.DBT_SCHEMA_DBT_SCHEMA.customer_order_summary_view
+  
+   as (
+    
+
+select
+    customer_id,
+    customer_name,
+    customer_segment,
+    signup_date,
+    total_orders,
+    total_order_amount,
+    average_order_amount,
+    most_recent_order_date,
+    case
+        when total_order_amount >= 500 then 'high_value'
+        when total_order_amount >= 100 then 'standard'
+        else 'new_or_low_value'
+    end as customer_value_band
+from DBT_DATABASE.DBT_SCHEMA_DBT_SCHEMA.customer_order_summary
+  );
+[0m13:07:25.347626 [debug] [Thread-7 (]: Opening a new connection, currently in state init
+[0m13:07:27.460782 [debug] [Thread-7 (]: SQL status: SUCCESS 1 in 2.113 seconds
+[0m13:07:27.464767 [info ] [Thread-7 (]: 4 of 4 OK created sql view model DBT_SCHEMA_DBT_SCHEMA.customer_order_summary_view  [[32mSUCCESS 1[0m in 2.15s]
+[0m13:07:27.465930 [debug] [Thread-7 (]: Finished running node model.dbt_snowflake_demo.customer_order_summary_view
+[0m13:07:27.470658 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m13:07:27.471569 [debug] [Dummy-1   ]: Connection 'model.dbt_snowflake_demo.stg_orders' was properly closed.
+[0m13:07:27.472174 [debug] [Dummy-1   ]: Connection 'model.dbt_snowflake_demo.stg_customers' was properly closed.
+[0m13:07:27.472745 [debug] [Dummy-1   ]: Connection 'model.dbt_snowflake_demo.customer_order_summary' was properly closed.
+[0m13:07:27.473349 [debug] [Dummy-1   ]: Connection 'model.dbt_snowflake_demo.customer_order_summary_view' was properly closed.
+[0m13:07:27.474154 [info ] [Dummy-1   ]: 
+[0m13:07:27.474805 [info ] [Dummy-1   ]: Finished running 1 table model, 3 view models in 0 hours 0 minutes and 13.46 seconds (13.46s).
+[0m13:07:27.476442 [debug] [Dummy-1   ]: Command end result
+[0m13:07:27.509756 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m13:07:27.512323 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m13:07:27.520634 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m13:07:27.521339 [info ] [Dummy-1   ]: 
+[0m13:07:27.522124 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m13:07:27.522727 [info ] [Dummy-1   ]: 
+[0m13:07:27.523368 [info ] [Dummy-1   ]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
+[0m13:07:27.525415 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 14.644066, "process_in_blocks": "0", "process_kernel_time": 1.21, "process_mem_max_rss": "475320", "process_out_blocks": "0", "process_user_time": 5.35}
+[0m13:07:27.526213 [debug] [Dummy-1   ]: Command `cli run` succeeded at 13:07:27.525845 after 14.65 seconds
+[0m13:07:27.526875 [debug] [Dummy-1   ]: Flushing usage events
