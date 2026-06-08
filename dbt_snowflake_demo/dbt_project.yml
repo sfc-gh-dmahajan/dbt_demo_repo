@@ -1,0 +1,16 @@
+name: dbt_snowflake_demo
+version: '1.0.0'
+config-version: 2
+
+profile: dbt_snowflake_demo
+
+model-paths: ["models"]
+
+models:
+  dbt_snowflake_demo:
+    +database: DBT_DATABASE
+    +schema: DBT_SCHEMA
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

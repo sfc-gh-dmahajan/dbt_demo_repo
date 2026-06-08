@@ -1,0 +1,10 @@
+dbt_snowflake_demo:
+  target: dev
+  outputs:
+    dev:
+      # Snowflake-native dbt injects account, user, and authentication at runtime.
+      type: snowflake
+      database: DBT_DATABASE
+      schema: DBT_SCHEMA
+      warehouse: CORTEX_WH
+      role: ACCOUNTADMIN

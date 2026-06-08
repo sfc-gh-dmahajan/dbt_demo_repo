@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: demo_sources
+    database: DBT_DATABASE
+    schema: DBT_SCHEMA
+    tables:
+      - name: customers
+        identifier: CUSTOMERS
+      - name: orders
+        identifier: ORDERS
