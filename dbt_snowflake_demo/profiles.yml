@@ -8,3 +8,12 @@ dbt_snowflake_demo:
       schema: DBT_SCHEMA
       warehouse: CORTEX_WH
       role: ACCOUNTADMIN
+      threads: 8
+    qa:
+      # Snowflake-native dbt injects account, user, and authentication at runtime.
+      type: snowflake
+      database: DBT_DATABASE
+      schema: DBT_SCHEMA
+      warehouse: CORTEX_WH
+      role: ACCOUNTADMIN
+      threads: 8
