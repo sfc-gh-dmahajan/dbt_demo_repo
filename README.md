@@ -67,3 +67,16 @@ From the workspace:
 dbt run --project-dir dbt_snowflake_demo
 dbt test --project-dir dbt_snowflake_demo
 ```
+
+## Secret and API Integration creation
+CREATE OR REPLACE SECRET dbt_git_secret
+  TYPE = password
+  USERNAME = 'sfc-gh-dmahajan'
+  PASSWORD = '<PAT>';
+
+-- API Integration
+CREATE OR REPLACE API INTEGRATION my_dbt_git_api_integration
+  API_PROVIDER = git_https_api
+  API_ALLOWED_PREFIXES = ('https://github.com/sfc-gh-dmahajan')
+  ALLOWED_AUTHENTICATION_SECRETS = (dbt_git_secret)
+  ENABLED = TRUE;
