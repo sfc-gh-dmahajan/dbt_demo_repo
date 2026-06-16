@@ -4,6 +4,7 @@ config-version: 2
 
 profile: dbt_snowflake_demo
 
+
 model-paths: ["models"]
 
 models:
